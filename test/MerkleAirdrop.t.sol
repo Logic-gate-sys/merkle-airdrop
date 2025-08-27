@@ -5,8 +5,7 @@ import {Test, console} from "forge-std/Test.sol";
 import {MerkleAirdrop} from "../src/MerkleAirdrop.sol";
 import {BengalToken} from "../src/BengalToken.sol";
 import {ZkSyncChainChecker} from "lib/foundry-devops/src/ZkSyncChainChecker.sol"; // If using foundry-devops
-import {DeployMerkleAirdrop} from "../../script/DeployMerkleAirdrop.s.sol";
-
+import {DeployMerkleAirdrop} from "../script/DeployMerkleAirdrop.s.sol";
 contract MerkleAirdropTest is ZkSyncChainChecker, Test {
     /*
     What we need for effective testing :
@@ -46,7 +45,7 @@ contract MerkleAirdropTest is ZkSyncChainChecker, Test {
             token = new BengalToken();
             //create a user with private key , address
             (user, userPrivKey) = makeAddrAndKey("userAddress");
-            gasPayer = makeAddr("gap-payer");
+            gasPayer = makeAddr("gas-payer");
             // let's deploy the air drop contract
             airdrop = new MerkleAirdrop(ROOT, token);
             //mint the user the amount * 4

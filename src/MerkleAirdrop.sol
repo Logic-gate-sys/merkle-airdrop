@@ -4,9 +4,12 @@ pragma solidity ^0.8.24;
 import {EIP712} from "@openzeppelin/contracts/utils/cryptography/EIP712.sol";
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import {IERC20, SafeERC20} from "../lib/openzepplin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
-import {MerkleAirdrop} from 'src/MerkleAirdrop.sol';
+import { MerkleProof } from "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+
+
+
 /**
- * @title Merkle Air Dro
+ * @title Merkle Air Drop
  * @author Daniel Kwasi Kpatamia
  * @notice Merkle proof implements cryptographic proofs using merkle trees data structures to verify if an address can claim a token
  * @dev This is the gate way to the air-drop functionality
